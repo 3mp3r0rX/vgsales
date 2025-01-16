@@ -1,0 +1,6 @@
+region,age_group,gender,income_level,preferred_platform,preferred_genre,percentage
+North America,18-24,Male,High,PS4,Shooter,25.4
+North America,25-34,Female,Medium,Xbox,RPG,20.3
+Europe,18-24,Female,Low,PC,Strategy,15.7
+Asia,25-34,Male,Low,Mobile,Action,30.7
+Asia,35-44,Female,Medium,Switch,Adventure,12.5
