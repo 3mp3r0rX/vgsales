@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import missingno as msno
 
-file_path = "curated_video_game_sales.csv"
+file_path = "vgsales_cleaned.csv"
 data = pd.read_csv(file_path)
 
 
@@ -21,7 +21,7 @@ msno.matrix(data)
 plt.show()
 
 plt.figure(figsize = (8, 5))
-sns.histplot(data['GlobalSales'], kde = False, bins = 30, color = 'blue')
+sns.histplot(data['Global_Sales'], kde = False, bins = 30, color = 'blue')
 plt.title('Global Sales Distribution')
 plt.xlabel('Global Sales')
 plt.ylabel('Frequency')
@@ -44,7 +44,7 @@ plt.title('Correlation Heatmap')
 plt.show()
 
 plt.figure(figsize=(12, 6))
-sns.boxplot(x='Platform', y='GlobalSales', data=data, hue=data['Platform'], palette='cool', legend=False)
+sns.boxplot(x='Platform', y='Global_Sales', data=data, hue=data['Platform'], palette='cool', legend=False)
 plt.title('Global Sales by Platform')
 plt.xlabel('Platform')
 plt.ylabel('Global Sales')
@@ -55,7 +55,7 @@ sns.pairplot(data, hue='Genre', palette='husl', diag_kind='kde')
 plt.show()
 
 
-top_platforms =  data.groupby('Platform')['GlobalSales'].sum().sort_values(ascending=False).head(10)
+top_platforms =  data.groupby('Platform')['Global_Sales'].sum().sort_values(ascending=False).head(10)
 print(top_platforms)
 
 sales_by_year = data.groupby('Year')['GlobalSales'].sum()
